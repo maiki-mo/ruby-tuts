@@ -47,9 +47,10 @@ case choice
         puts books
     end
     when "list"
-        books.each do |book, rating|
+        sorted = books.sort_by {|k, v| v}
+        sorted.reverse.each do |book, rating|
             puts "#{book}: #{rating}"
         end
     else
         puts "Error!  You have broken something!?!"
-end
+    end
